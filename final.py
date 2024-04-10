@@ -1,4 +1,3 @@
-# Dont even ask which playlist to play from, i will just enter the mood, and you will get me the song that's it
 import json
 import spotipy
 import requests
@@ -7,12 +6,10 @@ import pygame
 import tempfile
 import os
 
-# Spotify API credentials
 clientID = '3c46ae9e8c8e4863b2de9c8b261d45e1'
 clientSecret = '2aa36f60e4d348fc8ebd16032dfc2fb6'
 redirect_uri = 'http://localhost:8400/'
 
-# Initialize SpotifyOAuth object
 oauth_object = spotipy.SpotifyOAuth(clientID, clientSecret, redirect_uri)
 
 # Get access token
