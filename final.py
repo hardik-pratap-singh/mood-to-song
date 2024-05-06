@@ -6,24 +6,31 @@ import pygame
 import tempfile
 import os
 
-clientID = '3c46ae9e8c8e4863b2de9c8b261d45e1'
-clientSecret = '2aa36f60e4d348fc8ebd16032dfc2fb6'
+#Old
+# clientID = '3c46ae9e8c8e4863b2de9c8b261d45e1'
+# clientSecret = '2aa36f60e4d348fc8ebd16032dfc2fb6'
+
+
+#New
+clientID = '2cb50359dded48f4b3d7f32d6df3b86c'
+clientSecret = '9c932fa3cb784419b641c85ed2c4163d'
+
 redirect_uri = 'http://localhost:8400/'
 
 oauth_object = spotipy.SpotifyOAuth(clientID, clientSecret, redirect_uri)
 
-# Get access token
+# this is access token
 token_dict = oauth_object.get_access_token()
 token = token_dict['access_token']
 
-# Initialize Spotify object with authentication token
+# this is a spotify object 
 spotifyObject = spotipy.Spotify(auth=token)
 
-# Get current user information
+# this will give user information 
 user_name = spotifyObject.current_user()
 
-# To print the JSON response from browser in a readable format (optional)
-print(json.dumps(user_name, sort_keys=True, indent=4))
+# # To print the JSON response from browser in a readable format (optional)
+# print(json.dumps(user_name, sort_keys=True, indent=4))
 
 def get_playlist_by_mood(mood):
     # Search for playlists containing the mood in their name
